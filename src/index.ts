@@ -19,7 +19,7 @@ async function main() {
 
 main();
 
-app.use("/", (req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response) => {
     res.status(200).json("Welcome to the homepage");
 })
 

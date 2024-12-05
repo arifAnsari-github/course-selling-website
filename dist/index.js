@@ -26,12 +26,16 @@ function main() {
             }
         }
         catch (error) {
-            console.error("Error occured during connection" + error);
+            console.log("Error occured during connection");
+            process.exit(1);
         }
     });
 }
 main();
+app.get("/", (req, res) => {
+    res.status(200).json("Welcome to the homepage");
+});
 app.use("/api/v1/user", userRouter_1.default);
-app.listen(4000, function () {
+app.listen(4000, () => {
     console.log("Server is listening on the port: 4000");
 });
